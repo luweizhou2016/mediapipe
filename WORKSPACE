@@ -194,6 +194,12 @@ new_local_repository(
 )
 
 new_local_repository(
+  name = "linux_openvino",
+  build_file = "@//third_party:openvino_linux.BUILD",
+  path = "/home/luwei/gittree/debug_install/runtime/",
+)
+
+new_local_repository(
     name = "linux_ffmpeg",
     build_file = "@//third_party:ffmpeg_linux.BUILD",
     path = "/usr"

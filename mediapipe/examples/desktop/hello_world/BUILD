@@ -20,11 +20,19 @@ cc_binary(
     name = "hello_world",
     srcs = ["hello_world.cc"],
     visibility = ["//visibility:public"],
+    includes = [
+        # For OpenCV 4.x
+        "/home/luwei/gittree/debug_install/runtime/include/",
+        "/home/luwei/gittree/debug_install/runtime/include/ie/",
+        #"include/x86_64-linux-gnu/opencv4/",
+        #"include/opencv4/",
+    ],
     deps = [
         "//mediapipe/calculators/core:pass_through_calculator",
         "//mediapipe/framework:calculator_graph",
         "//mediapipe/framework/port:logging",
         "//mediapipe/framework/port:parse_text_proto",
         "//mediapipe/framework/port:status",
+        "//third_party:libopenvino",
     ],
 )

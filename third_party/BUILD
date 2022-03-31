@@ -199,6 +199,14 @@ alias(
 )
 
 cc_library(
+    name = "libopenvino",
+    visibility = ["//visibility:public"],
+    deps = [
+            "@linux_openvino//:openvino",
+    ],
+)
+
+cc_library(
     name = "libffmpeg",
     visibility = ["//visibility:public"],
     deps = select({
