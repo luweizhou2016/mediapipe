@@ -101,7 +101,7 @@ int main(int argc, char** argv) {
         std::cout << static_cast<int32_t>(*(outputData + i)) << ",";
     std::cout << std::endl;
 
-    delete intputData;
+    delete[] intputData;
 
   return 0;
 }

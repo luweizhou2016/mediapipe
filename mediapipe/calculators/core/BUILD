@@ -523,6 +523,37 @@ cc_test(
     ],
 )
 
+cc_library(
+    name = "ov_add_calculator",
+    srcs = ["ov_add_calculator.cc"],
+    visibility = [
+        "//visibility:public",
+    ],
+    deps = [
+        "//mediapipe/framework:calculator_framework",
+        "//mediapipe/framework/api2:node",
+        "//mediapipe/framework/port:ret_check",
+        "//third_party:libopenvino",
+    ],
+    alwayslink = 1,
+)
+
+cc_test(
+    name = "ov_add_calculator_test",
+    size = "small",
+    srcs = ["ov_add_calculator_test.cc"],
+    deps = [
+        ":ov_add_calculator",
+        "//mediapipe/framework:calculator_framework",
+        "//mediapipe/framework:calculator_runner",
+        "//mediapipe/framework:timestamp",
+        "//mediapipe/framework/port:gtest_main",
+        "//mediapipe/framework/port:status",
+        "//mediapipe/framework/tool:validate_type",
+        "//third_party:libopenvino",
+    ],
+)
+
 cc_test(
     name = "mux_calculator_test",
     srcs = ["mux_calculator_test.cc"],
